@@ -48,6 +48,7 @@ public class ReportServlet extends HttpServlet {
         if(reportName.endsWith(".pdf")) {
           response.setContentType("application/pdf");
           response.setHeader("Content-Disposition", "inline; filename=\"report.pdf\"");
+          response.setHeader("Max-age", 365);
         }
         ServletOutputStream ouputStream = response.getOutputStream();
         byte byteBuffer[] = new byte[8192];
